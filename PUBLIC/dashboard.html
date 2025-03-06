@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="2.style.css">
+  <title>ArtProtect - Dashboard</title>
+</head>
+<body class="background-color">
+  <ul class="nav">
+    <a href="dashboard.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="services.html">SERVICES</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="blog.html">BLOG</a>
+    <a href="contact.html">CONTACT</a>
+    <div class="dropdown">
+      <button class="dropbtn" id="username"></button>
+      <div class="dropdown-content">
+        <a href="account.html">Account</a>
+        <a href="certificates.html">My Certificates</a>
+        <a href="artist_info.html">Input Artist Information</a>
+        <a href="#" id="signout">Sign Out</a>
+      </div>
+    </div>
+  </ul>
+  
+  <section class="Border">
+    <br>
+    <h3 class="Main-Title">ART PROTECT</h3>
+    <br>
+  </section>
+  <span class="Recently">
+    <p> RECENT UPLOADS </p>
+  </span>
+  <section class="Photographs">
+    <span>
+      <img id="FALLING" src="Images/FALLING.png" alt="Falling">
+      <img id="DFU" src="Images/dfu.PNG" alt="Die for you">
+      <img id="LR" src="Images/PJ Hooper - LiveRightRe.png" alt="Live Right">
+    </span>
+  </section>
+  <section class="hero">
+    <!-- Content for signed-in users -->
+  </section>
+
+  <script src="scripts/dashboard.js"></script>
+</body>
+</html>

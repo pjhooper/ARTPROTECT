@@ -1,0 +1,31 @@
+document.getElementById('artistInfoForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  const artistName = document.getElementById('artistName').value;
+  const artistEmail = document.getElementById('artistEmail').value;
+  const artworkTitle = document.getElementById('artworkTitle').value;
+  const medium = document.getElementById('medium').value;
+  const dimensions = document.getElementById('dimensions').value;
+  const creationDate = document.getElementById('creationDate').value;
+
+  fetch('/api/artist_info', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ artistName, artistEmail, artworkTitle, medium, dimensions, creationDate })
+  })
+  .then(response => response.json())
+  .then(data => {
+    const responseMessage = document.getElementById('responseMessage');
+    if (data.success) {
+      responseMessage.innerHTML = 'Information submitted successfully!';
+    } else {
+      responseMessage.innerHTML = 'Submission failed: ' + data.message;
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    document.getElementById('responseMessage').innerHTML = 'An error occurred';
+  });
+});

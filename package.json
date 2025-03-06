@@ -1,0 +1,27 @@
+{
+  "name": "setup-_-resource_files",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pjhooper/ARTPROTECT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pjhooper/ARTPROTECT/issues"
+  },
+  "homepage": "https://github.com/pjhooper/ARTPROTECT#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "googleapis": "^146.0.0"
+  }
+}

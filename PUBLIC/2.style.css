@@ -1,0 +1,95 @@
+.nav > a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  background-color: black;
+  padding: 0.8rem 1.6rem;
+  font-size: 17px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 60px;
+  border: 1px solid transparent;
+  transition: all 0.25s ease-in;
+}
+
+.nav > a:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+
+body {
+  background-color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Main-Title {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  border: 1px solid white;
+  border-radius: 60px;
+  padding: 0.8rem 1.6rem;
+  font-size: 30px;
+  background-color: black;
+}
+
+.Recently {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+#SIGN {
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hero {
+  background-image: url('Images/contact-img.jpg');
+  background-size: cover;
+  background-size: contain;
+}
+
+.list {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  font-size: 20px;
+}
+
+#LR {
+  width: 220px;
+  height: 212px;
+}
+
+#DFU {
+  width: 220px;
+  height: 212px;
+}
+
+#FALLING {
+  width: 220px;
+  height: 212px;
+}
+
+.services {
+  color: white;
+}
+
+.Border {
+  background-image: url('Images/hero-bg.jpg');
+  background-size: cover;
+  background-size: contain;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.background-color {
+  background: linear-gradient(to left, grey, rgb(207, 198, 198));
+  text-align: center;
+}
+
+.Photographs {
+  text-align: center;
+}
