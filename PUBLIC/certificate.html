@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Authentication for Copyright</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .border-container {
+            border: 10px solid #000080;
+            padding: 40px;
+            width: 90%;
+            max-width: 900px;
+            background-color: white;
+            border-radius: 10px;
+            box-sizing: border-box;
+            overflow: auto;
+            height: calc(100vh - 80px); /* Adjust height to account for padding and border */
+        }
+        .certificate {
+            text-align: center;
+        }
+        .certificate h1 {
+            font-size: 36px;
+            margin-top: 0;
+            color: #000080;
+        }
+        .certificate h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #000080;
+        }
+        .certificate p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #333;
+        }
+        .certificate .section-title {
+            font-size: 22px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: left;
+            color: #000080;
+        }
+        .certificate .signature {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .certificate .signature div {
+            width: 45%;
+            text-align: left;
+        }
+        .certificate .signature p {
+            margin-bottom: 0;
+        }
+        .notarization {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .certificate hr {
+            border: 1px solid #000080;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="border-container">
+        <div class="certificate">
+            <h1>Certificate of Authentication for Copyright</h1>
+            
+            <h2>Title of the Work:</h2>
+            <p id="titleOfWork">[Full Title of the Photograph]</p>
+            
+            <h2>Author of the Work:</h2>
+            <p id="authorOfWork">[Author's Full Name]</p>
+            
+            <h2>Ownership (if different from Author):</h2>
+            <p id="ownership">[Owner's Full Name]</p>
+
+            <h2>Date of Creation:</h2>
+            <p id="dateOfCreation">[Date]</p>
+
+            <div class="section-title">Description of the Work:</div>
+            <p><strong>Subject Matter:</strong> <span id="subjectMatter">[Briefly describe what the photograph depicts, e.g., landscape, portrait, event.]</span></p>
+            <p><strong>Location:</strong> <span id="location">[Specify where the photograph was taken.]</span></p>
+            <p><strong>Setting and Context:</strong> <span id="settingContext">[Describe the setting and any relevant context or background information.]</span></p>
+            <p><strong>Technical Details:</strong> <span id="technicalDetails">[Include details like camera settings, lighting, exposure, filters used, etc.]</span></p>
+            <p><strong>Distinctive Features:</strong> <span id="distinctiveFeatures">[Mention any unique features that set the photograph apart, such as artistic elements, angle, or composition.]</span></p>
+
+            <hr>
+
+            <div class="section-title">Statement of Authorship:</div>
+            <p>I, <span id="authorStatement">[Author's Full Name]</span>, hereby declare that I am the original author of the work titled <span id="workTitleStatement">[Title of the Work]</span> and that this work is an original creation and not a copy of existing works.</p>
+            <div class="signature">
+                <div>
+                    <p>Signature of Author: _________________________</p>
+                    <p>Date: <span id="authorSignatureDate">[Date]</span></p>
+                </div>
+            </div>
+
+            <div class="section-title">Statement of Exclusivity:</div>
+            <p>I, <span id="ownerStatement">[Owner's Full Name]</span>, affirm that I am the exclusive owner of the copyright for the work titled <span id="workTitleOwnerStatement">[Title of the Work]</span> and that all information provided in this certificate is accurate to the best of my knowledge.</p>
+            <div class="signature">
+                <div>
+                    <p>Signature of Copyright Owner (if different from Author): _________________________</p>
+                    <p>Date: <span id="ownerSignatureDate">[Date]</span></p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="section-title">Contact Information:</div>
+            <p><strong>Address:</strong> <span id="contactAddress">[Contact Address]</span></p>
+            <p><strong>Phone Number:</strong> <span id="contactPhoneNumber">[Contact Phone Number]</span></p>
+            <p><strong>Email Address:</strong> <span id="contactEmail">[Contact Email]</span></p>
+
+            <div class="notarization">
+                <h2>Notarization (if required):</h2>
+                <p>This document was acknowledged before me on <span id="notarizationDate">[Date]</span> by <span id="notarySignatories">[Name(s) of Signatory(ies)]</span>.</p>
+                <p>Notary Public: _________________________</p>
+                <p>My Commission Expires: _________________</p>
+            </div>
+        </div>
+    </div>
+</body>

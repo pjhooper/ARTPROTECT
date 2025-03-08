@@ -1,53 +1,42 @@
 const dotenv = require('dotenv');
-const result = dotenv.config(); // Load environment variables from .env file
-
-if (result.error) {
-  throw result.error;
-}
-
-console.log(result.parsed); // Debugging statement to verify environment variables
+dotenv.config();
 
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
+const mongoose = require('mongoose');
 const authRoutes = require('./Routes/auth');
+const certificateRoutes = require('./Routes/certificate');
 
-// Debugging statement to verify environment variables
+const app = express();
+const port = process.env.PORT || 3000;
+
 console.log('MONGODB_URI:', process.env.MONGODB_URI);
 console.log('JWT_SECRET:', process.env.JWT_SECRET);
 console.log('PORT:', process.env.PORT);
+console.log('EMAIL_USER:', process.env.EMAIL_USER);
+console.log('EMAIL_PASS:', process.env.EMAIL_PASS);
 
-// Create Express app
-const app = express();
-
-// Set the port
-const port = process.env.PORT || 3000;
-
-// Middleware
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../PUBLIC')));
 
-// MongoDB connection
 const mongoUri = process.env.MONGODB_URI;
-
 if (!mongoUri) {
-  throw new Error('MONGODB_URI environment variable is not set');
+  console.error('MONGODB_URI is not defined in .env file');
+  process.exit(1); // Exit the application with an error code
 }
 
 mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('Failed to connect to MongoDB', err));
 
-// Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/certificate', certificateRoutes);
 
-// Serve the main page
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
+  res.sendFile(path.join(__dirname, '../PUBLIC/index.html'));
 });
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

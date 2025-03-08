@@ -34,15 +34,84 @@
   <section class="hero">
     <section class="services">
       <h5 id="SIGN">SIGN IN</h5>
-      <form>
-        <input type="User-Name" placeholder="User ID / Email">
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="User ID / Email" required>
         <br><br>
-        <input type="Password" placeholder="Password">
+        <input type="password" id="password" placeholder="Password" required>
         <br><br>
-        <input type="Sign In" placeholder="Sign In">
+        <button type="submit">Sign In</button>
       </form>
+      <div id="responseMessage"></div>
       <br><br><br>
+      
+      <h5 id="SIGNUP">SIGN UP</h5>
+      <form id="signupForm">
+        <input type="text" id="newUsername" placeholder="User ID / Email" required>
+        <br><br>
+        <input type="password" id="newPassword" placeholder="Password" required>
+        <br><br>
+        <button type="submit">Sign Up</button>
+      </form>
+      <div id="signupResponseMessage"></div>
     </section>
   </section>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      fetch('/api/auth/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      })
+      .then(response => response.json())
+      .then(data => {
+        const responseMessage = document.getElementById('responseMessage');
+        if (data.success) {
+          responseMessage.innerHTML = 'Sign-In Successful!';
+        } else {
+          responseMessage.innerHTML = 'Sign-In Failed: ' + data.message;
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('responseMessage').innerHTML = 'An error occurred';
+      });
+    });
+
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const username = document.getElementById('newUsername').value;
+      const password = document.getElementById('newPassword').value;
+
+      fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      })
+      .then(response => response.json())
+      .then(data => {
+        const signupResponseMessage = document.getElementById('signupResponseMessage');
+        if (data.success) {
+          signupResponseMessage.innerHTML = 'Sign-Up Successful!';
+        } else {
+          signupResponseMessage.innerHTML = 'Sign-Up Failed: ' + data.message;
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('signupResponseMessage').innerHTML = 'An error occurred';
+      });
+    });
+  </script>
 </body>
 </html>
